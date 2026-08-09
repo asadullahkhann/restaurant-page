@@ -4,34 +4,25 @@ import { getMenuContent } from './menu.js';
 import { getLegalAndDislaimerContent } from './disclaimer.js';
 
 const contentDiv = document.querySelector('#content');
-const homeBtn = document.querySelector('button:nth-child(1)');
-const menuBtn = document.querySelector('button:nth-child(2)');
-const disclaimerBtn = document.querySelector('button:nth-child(3)');
-window.onload = function() {
-    contentDiv.appendChild(getHomeContent().cardHeading);
-    contentDiv.appendChild(getHomeContent().card);
-    contentDiv.classList.add('padding', 'gap')
-};
+const homeBtn = document.querySelector('.home-btn');
+const menuBtn = document.querySelector('.menu-btn');
+const disclaimerBtn = document.querySelector('.disclaimer-btn');
 
-function clearContentDiv() {
-    while(contentDiv.firstChild) {
-        contentDiv.removeChild(contentDiv.firstChild)
-    }
-}
+window.addEventListener('load', () => {
+  contentDiv.appendChild(getHomeContent());
+});
 
 homeBtn.addEventListener('click', () => {
-    clearContentDiv();
-    window.onload();
-})
+  contentDiv.textContent = '';
+  contentDiv.appendChild(getHomeContent());
+});
 
 menuBtn.addEventListener('click', () => {
-    clearContentDiv();
-    contentDiv.appendChild(getMenuContent().cardHeading);
-    contentDiv.appendChild(getMenuContent().card);
+  contentDiv.textContent = '';
+  contentDiv.appendChild(getMenuContent());
 });
 
 disclaimerBtn.addEventListener('click', () => {
-    clearContentDiv();
-    contentDiv.appendChild(getLegalAndDislaimerContent().cardHeading);
-    contentDiv.appendChild(getLegalAndDislaimerContent().card);
-})
+  contentDiv.textContent = '';
+  contentDiv.appendChild(getLegalAndDislaimerContent());
+});

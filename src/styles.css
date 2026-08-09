@@ -1,177 +1,160 @@
 @font-face {
-    font-family: 'dynomite';
-    src: url('./DYNOMITE.TTF');
+  font-family: 'dynomite';
+  src: url('./fonts/Dynomite.woff2');
 }
 
 @font-face {
-    font-family: 'ktf-roadbrush';
-    src: url('./KTF-Roadbrush.ttf');
+  font-family: 'inter';
+  src: url('./fonts/inter.woff2');
 }
 
 @font-face {
-    font-family: 'back to back';
-    src: url('./Back-to-Black.ttf');
-}
-
-@font-face {
-    font-family: 'roboto';
-    src: url('./Roboto-Regular.ttf');
-}
-
-@font-face {
-    font-family: 'norse-bold';
-    src: url('./Norse-Bold.otf');
+  src: url('./fonts/edu-nsw-act-hand-pre.woff2');
+  font-family: 'edu-nsw-act-hand-pre';
 }
 
 :root {
-    --bg-clr: #ffe31c;
-    --text-clr: #363e92;
+  --clr-dominant: #F5E6C8;
+  --clr-secondary: #FFD21F;
+  --accent-clr: #C62828;
+  --text-clr: #2B2118;
 }
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'inter';
+  color: var(--text-clr);
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
-    gap: 20px;
-    background: linear-gradient(#09396a, #104172, #1d4f82, #295b8f, #32649b, #3a6da5, #4e78ac, #558ac4);
-    padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--clr-dominant);
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background-color: var(--clr-secondary);
+  padding: 0 10px;
+  padding-bottom: 10px;
 }
 
-.heading {
-    background-color: #fff;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    padding: 10px;
+h1 {
+  background-color: var(--clr-dominant);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  padding: 10px;
+  font-weight: normal;
+  line-height: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
+h1 > img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
 }
 
-.heading>div:not(:first-child) {
-    font-weight: normal;
-    font-family: 'dynomite';
-    font-size: 2.5rem;
-    color: var(--text-clr);
-    text-align: center;
+h1 > span {
+  font-family: 'dynomite';
 }
 
 nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-content: center;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-nav>button {
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    font-size: 1.2rem;
-    font-family: 'ktf-roadbrush';
-    background-color: #fc5f1c;
-    color: #fff;
-
+button {
+  border: none;
+  font-size: 1rem;
+  background: transparent;
 }
 
-nav>button:hover {
-    background-color: #650000;
-}
-
-nav>button:active {
-    background-color: #650000;
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 
 #content {
-    background: linear-gradient(#9f2701, #a02700, #b42901, #bf2f01);
-    border-radius: 20px;
-    display: grid;
-    grid-template-rows: min-content 1fr;
-}
-
-.card-heading {
-    justify-self: center;
-    font-family: 'back to back';
-    font-size: 2rem;
-    color: #fff;
+  flex-grow: 1;
 }
 
 .card {
-    display: grid;
-    gap: 30px;
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 25px;
+  display: grid;
+  gap: 16px;
+  padding: 16px;
 }
 
-.card * {
-    color: var(--text-clr);
-}
-
-.inner-card {
-    display: grid;
-    gap: 15px;
-}
-
-.two-column {
-    grid-template-columns: min-content 1fr;
+h2 {
+  justify-self: center;
+  font-family: 'edu-nsw-act-hand-pre';
+  line-height: 1;
 }
 
 ul {
-    padding-left: 25px;
-    display: grid;
-    gap: 10px;
+  display: grid;
+  gap: 8px;
+  font-size: 1.125rem;
+  list-style: none;
 }
 
-.inner-card img {
-    width: 75px;
-    height: 75px;
+li {
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+.text-secondary {
+  color: rgb(43 33 24 / 0.7);
+  
+}
+
+.card img {
+  width: 75px;
+}
+
+.card > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-bottom: 4px;
 }
 
 footer {
-    background-color: var(--bg-clr);
-    padding: 15px;
-    border-radius: 8px;
+  background-color: var(--clr-secondary);
+  padding: 6px;
+  font-size: 0.85rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
-footer p {
-    font-size: 1.3rem;
-    font-family: 'norse-bold';
+footer img {
+  width: 16px;
+  height: 16px;
 }
 
-a {
-    font-style: italic;
-    color: #650000;
-    display: inline-flex;
-    gap: 10px;
-}
-
-a img {
-    align-self: center;
-}
-
-.align-self-center {
-    align-self: center;
-}
-
-.padding {
-    padding: 25px;
-}
-
-.gap {
-    gap: 15px;
+@media (max-width: 580px) {
+  nav {
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
 }
