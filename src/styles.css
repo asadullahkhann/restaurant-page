@@ -60,8 +60,6 @@ h1 {
 }
 
 h1 > img {
-  width: 32px;
-  height: 32px;
   margin-bottom: 4px;
 }
 
@@ -144,11 +142,6 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 4px;
-}
-
-footer img {
-  width: 16px;
-  height: 16px;
 }
 
 @media (max-width: 580px) {
